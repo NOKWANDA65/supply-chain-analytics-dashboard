@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fictional-data supply chain analytics dashboard portfolio project.">
+  <title>Supply Chain Intelligence | Portfolio Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#" aria-label="Supply Chain Intelligence home">FIELDNOTE<span>/</span>DATA</a>
+    <span class="topbar-note">OPERATIONS INTELLIGENCE · DEMO</span>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <p class="eyebrow">PORTFOLIO PROJECT / 001</p>
+      <h1>Supply chain<br><em>at a glance.</em></h1>
+      <p class="lede">A compact view of inventory health across a fictional distribution network. Explore stock position, value and replenishment attention.</p>
+      <p class="data-note"><span class="dot"></span> Demonstration dataset · Fictional records</p>
+    </section>
+
+    <section class="controls" aria-label="Dashboard filters">
+      <label>Search inventory
+        <input id="search" type="search" placeholder="Search SKU or product…" autocomplete="off">
+      </label>
+      <label>Warehouse
+        <select id="warehouse">
+          <option value="all">All warehouses</option>
+        </select>
+      </label>
+      <button id="reset" class="reset" type="button">Reset filters ↗</button>
+    </section>
+
+    <section class="metrics" aria-label="Inventory key performance indicators">
+      <article class="metric"><p>ITEM RECORDS</p><strong id="itemCount">—</strong><small>Current selection</small></article>
+      <article class="metric"><p>UNITS ON HAND</p><strong id="unitCount">—</strong><small>Across selected items</small></article>
+      <article class="metric"><p>STOCK VALUE</p><strong id="stockValue">—</strong><small>Illustrative cost value</small></article>
+      <article class="metric attention"><p>REORDER ATTENTION</p><strong id="lowCount">—</strong><small>Below reorder point</small></article>
+    </section>
+
+    <section class="table-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">INVENTORY REGISTER</p><h2>Stock position</h2></div>
+        <span id="resultCount" class="result-count" aria-live="polite"></span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>SKU / PRODUCT</th><th>WAREHOUSE</th><th>ON HAND</th><th>REORDER AT</th><th>UNIT COST</th><th>STATUS</th></tr></thead>
+          <tbody id="inventoryRows"></tbody>
+        </table>
+      </div>
+      <p id="emptyState" class="empty" hidden>No inventory records match these filters.</p>
+    </section>
+
+    <footer>
+      <span>FIELDNOTE / DATA</span>
+      <span>BUILT FOR LEARNING · NOT A LIVE INVENTORY SYSTEM</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
